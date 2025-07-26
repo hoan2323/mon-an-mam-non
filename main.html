@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Món ăn thường ngày cho trẻ mầm non</title>
+  <style>
+    :root {
+      --primary: #ff7f50;
+      --primary-dark: #ff6a33;
+      --accent: #fff200;
+      --bg: #f9f9f9;
+      --text: #333;
+      --card: #fff7f2;
+      --highlight: #ffe4d9;
+    }
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary), #ff9966);
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    main {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+    }
+    .intro {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      border-left: 6px solid var(--primary);
+    }
+    .timetable {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      padding: 24px;
+    }
+    .days {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .day-btn {
+      cursor: pointer;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      background: var(--card);
+      padding: 10px 12px;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .day-btn:hover { background: var(--highlight); }
+    .day-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary-dark);
+    }
+    .menu-day {
+      border: 2px solid var(--primary);
+      background: var(--card);
+      border-radius: 10px;
+      padding: 20px 24px;
+      animation: fade .3s ease;
+    }
+    .hidden { display: none; }
+    h2.title-day {
+      margin-top: 0;
+      color: var(--primary);
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .meal-block {
+      margin-bottom: 20px;
+      padding: 12px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    h3 {
+      margin-bottom: 6px;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    ul {
+      margin: 0 0 12px 20px;
+      padding: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 14px 10px;
+      background: var(--primary);
+      color: white;
+      margin-top: 32px;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><b>Món ăn thường ngày cho trẻ mầm non</b></h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p><strong>Hướng dẫn:</strong> Chọn ngày (T2 → CN) để xem thực đơn chi tiết cho trẻ, bao gồm 4 bữa: <em>🥣 Bữa sáng, 🍚 Bữa trưa, 🥤 Bữa phụ, 🍲 Bữa tối</em>.</p>
+    </section>
+
+    <section class="timetable">
+      <div class="days">
+        <div class="day-btn active" data-target="t2">Thứ 2</div>
+        <div class="day-btn" data-target="t3">Thứ 3</div>
+        <div class="day-btn" data-target="t4">Thứ 4</div>
+        <div class="day-btn" data-target="t5">Thứ 5</div>
+        <div class="day-btn" data-target="t6">Thứ 6</div>
+        <div class="day-btn" data-target="t7">Thứ 7</div>
+        <div class="day-btn" data-target="cn">Chủ nhật</div>
+      </div>
+
+      <!-- Ngày mẫu: Thứ 2 -->
+      <div class="menu-day" id="t2">
+        <h2 class="title-day">Thực đơn Thứ 2</h2>
+        <div class="meal-block">
+          <h3>🥣 Bữa sáng</h3>
+          <ul><li>Cháo yến mạch nấu sữa, chuối chín</li></ul>
+        </div>
+        <div class="meal-block">
+          <h3>🍚 Bữa trưa</h3>
+          <ul>
+            <li>Cơm, gà kho, canh rau ngót nấu tôm</li>
+            <li>Dưa hấu tráng miệng</li>
+          </ul>
+        </div>
+        <div class="meal-block">
+          <h3>🥤 Bữa phụ</h3>
+          <ul><li>Sữa chua hoa quả</li></ul>
+        </div>
+        <div class="meal-block">
+          <h3>🍲 Bữa tối</h3>
+          <ul><li>Cá hồi sốt cam, canh bí đỏ, rau củ luộc</li></ul>
+        </div>
+      </div>
+
+      <!-- Các ngày khác giữ nguyên nội dung cũ nhưng gói trong .meal-block -->
+      <!-- Thứ 3 -->
+      <div class="menu-day hidden" id="t3">
+        <h2 class="title-day">Thực đơn Thứ 3</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Mì nui với rau củ và thịt bằm, sữa tươi</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, thịt bò xào súp lơ, canh bí xanh nấu tôm</li><li>Thanh long tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Sinh tố xoài</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Cháo tôm rau cải ngọt</li></ul></div>
+      </div>
+
+      <!-- Thứ 4 -->
+      <div class="menu-day hidden" id="t4">
+        <h2 class="title-day">Thực đơn Thứ 4</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Bánh mì trứng ốp la, salad rau củ</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, cá thu kho cà chua, canh mồng tơi nấu tôm</li><li>Cam tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Phô mai + sữa hạt</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Bún gà xé rau xanh</li></ul></div>
+      </div>
+
+      <!-- Thứ 5 -->
+      <div class="menu-day hidden" id="t5">
+        <h2 class="title-day">Thực đơn Thứ 5</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Cháo đậu xanh thịt bằm</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, thịt heo rim, canh bí đỏ thịt bằm</li><li>Nho tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Sữa chua uống</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Mì gạo xào gà và rau củ</li></ul></div>
+      </div>
+
+      <!-- Thứ 6 -->
+      <div class="menu-day hidden" id="t6">
+        <h2 class="title-day">Thực đơn Thứ 6</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Phở bò nhỏ, ít gia vị</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, cá basa kho nghệ, canh cải thìa nấu tôm</li><li>Lê tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Bánh flan</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Cháo gà nấm hương</li></ul></div>
+      </div>
+
+      <!-- Thứ 7 -->
+      <div class="menu-day hidden" id="t7">
+        <h2 class="title-day">Thực đơn Thứ 7</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Bún riêu cua (nhạt, ít mắm tôm), rau xanh luộc</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, tôm rim, canh rau dền nấu thịt bằm</li><li>Chuối tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Sinh tố bơ</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Miến gà nấu nấm</li></ul></div>
+      </div>
+
+      <!-- Chủ nhật -->
+      <div class="menu-day hidden" id="cn">
+        <h2 class="title-day">Thực đơn Chủ nhật</h2>
+        <div class="meal-block"><h3>🥣 Bữa sáng</h3><ul><li>Bánh pancake chuối + sữa tươi</li></ul></div>
+        <div class="meal-block"><h3>🍚 Bữa trưa</h3><ul><li>Cơm, thịt viên sốt cà chua, canh bí xanh nấu tôm</li><li>Dâu tây tráng miệng</li></ul></div>
+        <div class="meal-block"><h3>🥤 Bữa phụ</h3><ul><li>Sữa chua phô mai</li></ul></div>
+        <div class="meal-block"><h3>🍲 Bữa tối</h3><ul><li>Cháo cá lóc rau ngót</li></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 - Thông tin dành cho phụ huynh
+    <br> 
+    <a href="https://www.facebook.com/profile.php?id=100072654151415" target="_blank">Mầm non Tiên Phong I</a> - Bản quyền thuộc về cô Tạ Thị Chí
+    
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.day-btn');
+    const menus = document.querySelectorAll('.menu-day');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.target;
+        menus.forEach(m => m.classList.add('hidden'));
+        document.getElementById(target).classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
+
